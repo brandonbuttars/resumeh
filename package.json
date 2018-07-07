@@ -1,0 +1,19 @@
+{
+  "name": "resumeh",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brandonbuttars/resumeh.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "bs": "browser-sync start -c bs-config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brandon Buttars <brandonbuttars@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.24.4"
+  }
+}

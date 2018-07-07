@@ -1,0 +1,24 @@
+{
+  "social": [
+    {
+      "site": "linkedin",
+      "url": ""
+    },
+    {
+      "site": "facebook",
+      "url": ""
+    },
+    {
+      "site": "twitter",
+      "url": ""
+    },
+    {
+      "site": "youtube",
+      "url": ""
+    },
+    {
+      "site": "pinterest",
+      "url": ""
+    }
+  ]
+}
