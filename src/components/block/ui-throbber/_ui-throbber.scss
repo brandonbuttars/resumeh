@@ -1,0 +1,84 @@
+@keyframes ripple {
+  0% {
+    top: 9.4rem;
+    left: 9.4rem;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -0.3rem;
+    left: -0.3rem;
+    width: 19.4rem;
+    height: 19.4rem;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes ripple {
+  0% {
+    top: 9.4rem;
+    left: 9.4rem;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -0.3rem;
+    left: -0.3rem;
+    width: 19.4rem;
+    height: 19.4rem;
+    opacity: 0;
+  }
+}
+
+ui-throbber {
+  pointer-events: none;
+  display: block;
+  position: fixed;
+  width: 15rem;
+  height: 15rem;
+  top: 20%;
+  left: 50%;
+  margin-left: -7.5rem;
+  opacity: 1;
+  transition: 0.2s opacity linear;
+  &[hidden] {
+    opacity: 0;
+  }
+  & > div {
+    width: 15rem;
+    height: 15rem;
+    & > div {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.ripple {
+  position: relative;
+}
+.ripple div {
+  box-sizing: content-box;
+  position: absolute;
+  border-width: 0.6rem;
+  border-style: solid;
+  opacity: 1;
+  border-radius: 50%;
+  -webkit-animation: ripple 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  animation: ripple 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.ripple div:nth-child(1) {
+  border-color: $secondary-300;
+}
+.ripple div:nth-child(2) {
+  border-color: $primary-300;
+  -webkit-animation-delay: -0.75s;
+  animation-delay: -0.75s;
+}
+.ripple {
+  width: 15rem;
+  height: 15rem;
+  -webkit-transform: translate(-7.5rem, -7.5rem) scale(0.75) translate(7.5rem, 7.5rem);
+  transform: translate(-7.5rem, -7.5rem) scale(0.75) translate(7.5rem, 7.5rem);
+}

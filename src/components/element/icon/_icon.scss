@@ -1,0 +1,19 @@
+icon {
+  * {
+    pointer-events: none;
+  }
+  i {
+    display: block;
+    font-style: normal;
+    font-weight: normal !important;
+    &[circle] {
+      position: relative;
+      margin-right: 0.25em;
+      background: $black;
+      color: $white;
+      top: 0.25em;
+      padding: 0.25em;
+      border-radius: 50%;
+    }
+  }
+}

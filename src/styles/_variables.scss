@@ -1,0 +1,32 @@
+// FONT
+$font_family: 'Open Sans', Arial, sans-serif !default;
+$font_family_2: Consolas, Menlo, Monaco, monospace !default;
+$font_weight: normal !default;
+$font_weight_2: 600 !default;
+$font_size: 1.3rem !default;
+$font_size_2: $font_size !default;
+
+// WHITESPACE
+$spacing: 1rem !default;
+$margin: $spacing !default;
+$padding: $spacing !default;
+$line_height: 1.5 !default;
+
+// GRID
+$grid_padding: $spacing !default;
+$grid_margin: $spacing !default;
+
+// RESPONSIVE
+$screen_minimum: 320px !default;
+$screen_small: 480px !default;
+$screen_mobile: 600px !default;
+$screen_tablet: 768px !default;
+$screen_desktop: 1024px !default;
+$screen_large: 1280px !default;
+
+// GRID BREAKPOINTS
+$grid_small: $screen_small;
+$grid_mobile: $screen_mobile;
+$grid_tablet: $screen_tablet;
+$grid_desktop: $screen_desktop;
+$grid_large: $screen_large;

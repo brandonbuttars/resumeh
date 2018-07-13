@@ -1,0 +1,177 @@
+@mixin grids($attr, $grid_white_space) {
+  // SIZES
+  // Value out of 12
+  &[#{$attr}='0'] {
+    display: none;
+  }
+  &[#{$attr}='1'] {
+    flex: 0 0 calc((1/12*100%) - #{$grid_white_space});
+  }
+  &[#{$attr}='2'] {
+    flex: 0 0 calc((1/6*100%) - #{$grid_white_space});
+  }
+  &[#{$attr}='3'] {
+    flex: 0 0 calc((1/4*100%) - #{$grid_white_space});
+  }
+  &[#{$attr}='4'] {
+    flex: 0 0 calc((1/3*100%) - #{$grid_white_space});
+  }
+  &[#{$attr}='5'] {
+    flex: 0 0 calc((5/12*100%) - #{$grid_white_space});
+  }
+  &[#{$attr}='6'] {
+    flex: 0 0 calc((1/2*100%) - #{$grid_white_space});
+  }
+  &[#{$attr}='7'] {
+    flex: 0 0 calc((7/12*100%) - #{$grid_white_space});
+  }
+  &[#{$attr}='8'] {
+    flex: 0 0 calc((2/3*100%) - #{$grid_white_space});
+  }
+  &[#{$attr}='9'] {
+    flex: 0 0 calc((3/4*100%) - #{$grid_white_space});
+  }
+  &[#{$attr}='10'] {
+    flex: 0 0 calc((5/6*100%) - #{$grid_white_space});
+  }
+  &[#{$attr}='11'] {
+    flex: 0 0 calc((11/12*100%) - #{$grid_white_space});
+  }
+  &[#{$attr}='12'], &[#{$attr}='full'] {
+    flex: 0 0 calc((12/12*100%) - #{$grid_white_space});
+  }
+}
+
+grid, .grid, [grid] {
+  // https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+  // Use FlexBox model
+  display: flex;
+  display: flexbox;
+
+  card & {
+    margin: 0 -$grid_margin;
+    padding: 0;
+  }
+
+  // flex-direction: row | row-reverse | column | column-reverse;
+  // CSS default: row
+  //flex-direction: row;
+
+  // flex-wrap: nowrap | wrap | wrap-reverse;
+  // CSS default: nowrap
+  //flex-wrap: wrap;
+
+  // flex-flow: flex-direction flex-wrap;
+  // CSS default: row nowrap
+  flex-flow: row wrap;
+
+  // justify-content: flex-start | flex-end | center | space-between | space-around;
+  // CSS default: flex-start
+  //justify-content: flex-start;
+  justify-content: flex-start;
+
+  // align-items: flex-start | flex-end | center | baseline | stretch;
+  // CSS default: stretch;
+  align-items: stretch;
+
+  // align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+  // CSS default: stretch
+  align-content: stretch;
+
+  & > * {
+    // Used * for file size compression
+    // Includes all elements including grid-item, div, etc.
+    padding: 0;
+    margin: $grid_margin;
+
+    // order: <integer>
+    // set on individual elements
+
+    // flex-grow: <number>
+    // 1 even size, 2 twice the size as 1, etc.
+    // CSS default: 0
+
+    // flex-shrink: <number>
+    // just like grow but shrinking
+    // CSS default: 1
+
+    // flex-basis: <length> | auto;
+    // CSS default: auto
+
+    // flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+    // CSS default: 0 1 auto
+    flex: 1 1 auto;
+  }
+
+  & > * {
+    // align-self: auto | flex-start | flex-end | center | baseline | stretch;
+    // CSS default: stretch
+    @include grids(size, $grid_margin*2);
+    @media screen {
+      @include grids(small, $grid_margin*2);
+    }
+    //@media screen and (min-width: $grid_small + 1) and (max-width: $grid_mobile) {
+    @media screen and (min-width: $grid_mobile) {
+      @include grids(mobile, $grid_margin*2);
+    }
+    //@media screen and (min-width: $grid_mobile + 1) and (max-width: $grid_tablet) {
+    @media screen and (min-width: $grid_tablet ) {
+      @include grids(tablet, $grid_margin*2);
+    }
+    //@media screen and (min-width: $grid_tablet + 1) and (max-width: $grid_desktop) {
+    @media screen and (min-width: $grid_desktop) {
+      @include grids(desktop, $grid_margin*2);
+    }
+    //@media screen and (min-width: $grid_desktop + 1) {
+    @media screen and (min-width: $grid_large) {
+      @include grids(large, 0px);
+    }
+  }
+  & + h3 {
+    margin: $spacing*2 0 $spacing;
+  }
+}
+
+grid[compact], .grid[compact], [grid][compact] {
+  //margin: 0;
+  card & {
+    margin: 0;
+    padding: 0;
+  }
+
+  & > * {
+    margin: 0;
+    padding: 0;
+    // align-self: auto | flex-start | flex-end | center | baseline | stretch;
+    // CSS default: stretch
+    @include grids(size, 0px);
+    @media screen {
+      @include grids(small, 0px);
+    }
+    //@media screen and (min-width: $grid_small + 1) and (max-width: $grid_mobile) {
+    @media screen and (min-width: $grid_mobile) {
+      @include grids(mobile, 0px);
+    }
+    //@media screen and (min-width: $grid_mobile + 1) and (max-width: $grid_tablet) {
+    @media screen and (min-width: $grid_tablet) {
+      @include grids(tablet, 0px);
+    }
+    //@media screen and (min-width: $grid_tablet + 1) and (max-width: $grid_desktop) {
+    @media screen and (min-width: $grid_desktop) {
+      @include grids(desktop, 0px);
+    }
+    //@media screen and (min-width: $grid_desktop + 1) {
+    @media screen and (min-width: $grid_large) {
+      @include grids(large, 0px);
+    }
+  }
+}
+
+card[grid], card.grid {
+  margin: $grid_margin*1.5;
+  padding: $grid_padding;
+  &[compact] {
+    margin: $grid_margin*1.5;
+    padding: $grid_margin*2;
+  }
+}

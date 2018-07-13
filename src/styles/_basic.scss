@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  background: url('../assets/patterns/light_wool.png');
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: $primary-500;
+  &:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    height: 1rem;
+    width: 100%;
+    background: $secondary-300;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.2);
+  }
+}
+
+h2 {
+  background: $secondary-300;
+  display: inline-block;
+  padding: 1rem 3rem;
+  margin-left: -3rem;
+  color: $primary-500;
+  line-height: normal;
+  text-shadow: 0.1rem 0.1rem 0 $secondary-100;
+}
+
+h3 {}
+
+h4 {
+  font-size: 1.8rem;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: 1.6rem;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: 1.5rem;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-style: italic;
+}

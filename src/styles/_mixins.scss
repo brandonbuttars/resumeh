@@ -1,0 +1,149 @@
+// Mixins
+@mixin transition($property: all, $time: 0.2s, $type: linear) {
+  transition: $time $type $property;
+}
+
+@mixin drop_shadow($x: 0, $y: 2px, $blur: 4px, $spread: 0, $color: rgba(0, 0, 0, 0.2)) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin drop_shadow_2($x: 0, $y: -2px, $blur: 4px, $spread: 0, $color: rgba(0, 0, 0, 0.2)) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin shadow($x: 0, $y: 2px, $blur: 4px, $color: rgba(0, 0, 0, 0.2)) {
+  filter: drop-shadow($x $y $blur $color);
+  -webkit-filter: drop-shadow($x $y $blur $color);
+  filter: url('/assets/images/dropshadow.svg#drop-shadow');
+}
+
+@mixin inner_shadow($x: 0, $y: 2px, $blur: 4px, $spread: 0, $color: rgba(0, 0, 0, 0.2)) {
+  box-shadow: inset $x $y $blur $spread $color;
+}
+
+@mixin scrolling() {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+@mixin no_scroll() {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+}
+
+@mixin repaint() {
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  transform: translatez(0);
+}
+
+@mixin no_select() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin selectable() {
+  -webkit-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+}
+
+@mixin unselectable() {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin rotate($degree) {
+  -ms-transform: rotate(#{$degree}deg);
+  -webkit-transform: rotate(#{$degree}deg);
+  transform: rotate(#{$degree}deg);
+}
+
+// Extend Classes
+.inline-block {
+  display: inline-block;
+  zoom: 1;
+  vertical-align: top;
+  margin-right: -4px;
+}
+
+.menu-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inner-container {
+  padding: 0 $spacing;
+  position: relative;
+}
+
+.hilite {
+  &::-moz-selection {
+    color: $white;
+    background: $color_hilite;
+  }
+  &::selection {
+    color: $white;
+    background: $color_hilite;
+  }
+}
+
+@mixin placeholder($color: red, $opacity: 1) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    color: $color;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin color_class($selector, $color, $type:'color') {
+  #{$selector} {
+    #{$type}: #{$color}
+  }
+}
+
+@mixin icon_color_extend($selectors, $extend) {
+  @each $selector in $selectors {
+    #{$selector} [icon]:before, [icon]#{$selector}:before {
+      @extend #{$extend}
+    }
+  }
+}
+
+.invisible {
+	opacity: 0;
+	transition: 0.1s opacity linear;
+}
+
+.visible {
+	opacity: 1;
+	transition: 0.1s opacity linear;
+}
+
+[click] {
+	& * {
+		pointer-events: none;
+	}
+}

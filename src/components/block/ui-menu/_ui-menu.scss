@@ -1,0 +1,101 @@
+$menu-width: 5.5rem;
+$menu-width-open: 17.5rem;
+
+ui-app [content] {
+  padding: 0 $spacing*2 $spacing*2 calc(#{$menu-width} + #{$spacing*2});
+  @media screen and (min-width: $screen-desktop) {
+    padding: 0 $spacing*4 $spacing*4 calc(#{$menu-width-open} + #{$spacing*2});    
+  }
+}
+
+ui-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: block;
+  line-height: 6rem;
+  background: $primary-500;
+  color: $primary-200;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 800;
+  box-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.05);
+  height: 100%;
+  overflow: hidden;
+  width: $menu-width;
+  transition: 0.2s width ease-in-out;
+  @media screen and (min-width: $screen-desktop) {
+    width: $menu-width-open;    
+  }
+  * {
+    transition: inherit;
+  }
+  nav {
+    padding-top: 2rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    white-space: nowrap;
+    &[hamburger] {
+      @media screen and (min-width: $screen-desktop) {
+        display: none;  
+      }
+      a {
+        icon [circle] {
+          background: $primary-500;
+          color: $primary-300;
+        }
+        &:hover {
+          icon [circle] {
+            background: darken($primary-500, 5%);
+            color: $primary-300;
+          }
+        }
+      }
+    }
+    &[active] {
+      a, a:hover { 
+        icon [circle] {
+          background: $secondary-300;
+          color: $primary-500;
+        }
+      }
+    }
+  }
+  [open] & {
+    width: $menu-width-open;
+    li {
+      &[hamburger] {
+        a, a:hover {
+          icon [circle] {
+            background: darken($primary-500, 10%);
+            color: $primary-200;
+          }
+        }
+      }
+    }
+  }
+  a {
+    padding: 0 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.1s all linear;
+    &:hover {
+      // color: $secondary-300;
+      icon [circle] {
+        background: $primary-100;
+      }
+    }
+  }
+  icon [circle] {
+    color: $primary-500;
+    background: $primary-300;
+  }
+}

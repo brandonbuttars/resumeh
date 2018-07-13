@@ -1,0 +1,77 @@
+ui-app {
+  display: block;
+  logo {
+    height: 18rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+  [content] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    transition: 0.2s opacity linear;
+    height: calc(100vh - 1rem);
+    width: 100%;
+    overflow: auto;
+    text-shadow: 0.1rem 0.1rem 0 $white;
+    @include scrolling();
+    &[hidden] {
+      opacity: 0;
+    }
+  }
+  .profile-wrapper img {
+    display: block;
+    border-radius: 50%;
+    border: 1rem solid $primary-300;
+    max-width: 100%;
+    margin: 1rem 0;
+    @media screen and (min-width: $screen-mobile) {
+      max-width: 25rem;
+      border: 0.5rem solid $primary-300;
+      float: left;
+      margin-right: 2rem;
+      shape-outside: circle(50%);
+    }
+  }
+  h1 {
+    line-height: 1;
+    font-weight: 300;
+    margin: 0;
+    color: $primary-500;
+    // font-size: 2.4rem;
+    font-size: 8vw;
+    text-transform: uppercase;
+    letter-spacing: -0.1rem;
+    text-shadow: 1px 1px 0 rgba($white, 0.5);
+    strong {
+      font-weight: 800;
+    }
+    @media screen and (min-width: $screen_tablet) {
+      font-size: 4.8rem;
+    }
+  }
+  [email] {
+    color: $primary-500;
+    font-weight: 600;
+    font-size: 4vw;
+    text-shadow: 1px 1px 0 rgba($white, 0.5);
+    @media screen and (min-width: $screen_tablet) {
+      font-size: 2.4rem;
+    }
+  }
+  [phone] {
+    letter-spacing: 0.4rem;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 4vw;
+    color: $primary-500;
+    text-shadow: 1px 1px 0 rgba($white, 0.5);
+    @media screen and (min-width: $screen_tablet) {
+      font-size: 2.4rem;
+    }
+  }
+}

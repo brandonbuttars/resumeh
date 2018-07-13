@@ -1,0 +1,10 @@
+education-block {
+  grid {
+    div {
+      vertical-align: top;
+      &:last-child {
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}

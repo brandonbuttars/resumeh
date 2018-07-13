@@ -1,0 +1,10 @@
+logo {
+  @extend .inline-block;
+  svg { display: block; height: 100% }
+  .logo-group {}
+  .circle { fill: $primary-300 }
+  .buttar-outline { fill: $white }
+  .buttar-top { fill: $secondary-100 }
+  .buttar-left { fill: $secondary-200 }
+  .buttar-right { fill: $secondary-300 }
+}

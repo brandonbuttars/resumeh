@@ -1,0 +1,37 @@
+ui-technology {
+  grid {
+    span {
+      margin: 0,5rem;
+      a { 
+        display: block;
+        padding: 0.5rem 2rem;
+        margin: 0.2rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: $white;
+        text-decoration: none;
+        opacity: 0.85;
+        transition: 0.2s opacity ease-in-out;
+        text-shadow: 0.1rem 0.1rem 0 rgba(0,0,0,0.2);
+        &:hover {
+          opacity: 1;
+        }
+        &[active] {
+          background: $secondary-300 !important;
+          opacity: 1;
+        }
+      }
+      &[level='1'] a { background: $primary-100 }
+      &[level='2'] a { background: $primary-200 }
+      &[level='3'] a { background: $primary-300 }
+      &[level='4'] a { background: $primary-400 }
+      &[level='5'] a { background: $primary-500 }
+    }
+    &:after {
+      content: "";
+      flex: 1 0 50%;
+    }
+  }
+}
