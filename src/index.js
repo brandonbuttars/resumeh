@@ -1,7 +1,9 @@
 import './riot';
+import Device from './modules/device';
 import PubSubClass from './modules/pubsub';
 import Modal from './modules/modal';
 
+new Device();
 new PubSubClass();
 Modal();
 
