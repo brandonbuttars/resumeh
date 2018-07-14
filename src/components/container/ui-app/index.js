@@ -51,6 +51,7 @@ const html = `
 `;
 
 riot.tag('ui-app', html, function (opts) {
+  document.title = app.title.root;
   const tag = this,
         root = tag.root;
 

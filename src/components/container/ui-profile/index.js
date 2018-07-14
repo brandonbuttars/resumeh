@@ -1,3 +1,4 @@
+import app from '../../../../config/app';
 import riot from 'riot';
 
 const html = `
@@ -9,4 +10,6 @@ const html = `
   </div>
 `;
 
-riot.tag('ui-profile', html, function (opts) {});
+riot.tag('ui-profile', html, function (opts) {
+  document.title = app.title.profile;
+});

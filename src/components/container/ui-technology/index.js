@@ -1,3 +1,4 @@
+import app from '../../../../config/app';
 import riot from 'riot';
 
 const html = `
@@ -15,4 +16,6 @@ const html = `
   </div>
 `;
 
-riot.tag('ui-technology', html, function (opts) {});
+riot.tag('ui-technology', html, function (opts) {
+  document.title = app.title.technology;
+});

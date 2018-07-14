@@ -1,3 +1,4 @@
+import app from '../../../../config/app';
 import riot from 'riot';
 
 const html = `
@@ -5,4 +6,6 @@ const html = `
   <portfolio-block portfolio="{{opts.portfolio}}"></portfolio-block>
 `;
 
-riot.tag('ui-portfolio', html, function (opts) {});
+riot.tag('ui-portfolio', html, function (opts) {
+  document.title = app.title.portfolio;
+});

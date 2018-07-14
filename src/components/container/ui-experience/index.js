@@ -1,3 +1,4 @@
+import app from '../../../../config/app';
 import riot from 'riot';
 
 const html = `
@@ -5,4 +6,6 @@ const html = `
   <experience-block experience="{{opts.experience}}"></education-block>
 `;
 
-riot.tag('ui-experience', html, function (opts) {});
+riot.tag('ui-experience', html, function (opts) {
+  document.title = app.title.experience;
+});

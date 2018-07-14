@@ -34,11 +34,14 @@ module.exports = {
     "watchOptions": {
         "ignoreInitial": true
     },
-    "server": '.',
+    "server": {
+        baseDir: ".",
+        index: "development.html"
+    },
     "proxy": false,
     "port": 8888,
     "middleware": false,
-    "serveStatic": [],
+    "serveStatic": ['./development.html'],
     "ghostMode": {
         "clicks": true,
         "scroll": true,

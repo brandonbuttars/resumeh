@@ -1,4 +1,13 @@
 export default app = {
+  name: 'Brandon Buttars',
+  title: {
+    'root': 'Brandon Buttars',
+    'profile': 'Profile | Brandon Buttars',
+    'education': 'Education | Brandon Buttars',
+    'experience': 'Experience | Brandon Buttars',
+    'technology': 'Technology | Brandon Buttars',
+    'portfolio': 'Portfolio | Brandon Buttars'
+  },
   api: {
     'root': 'http://buttars.space:1337',
     'profile': 'http://buttars.space:1337/profile/5b41337e929fde6e8bd4244a',
