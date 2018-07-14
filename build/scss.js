@@ -9,6 +9,9 @@ let build = args.dist ? 'dist' : 'base',
     input = 'src/styles/styles.scss',
     output = build === 'dist' ? 'dist/styles/resumeh.min.css' : 'dist/styles/resumeh.css';
 
-let cmd = `node-sass${compressed} ${input} > ${output}`;
+let cmd = `if [ ! -d dist/styles ]; then
+  mkdir -p dist/styles;
+fi
+node-sass${compressed} ${input} > ${output}`;
 
 npm.run(cmd);

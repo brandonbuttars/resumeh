@@ -1,3 +1,4 @@
+import app from '../../../../config/app';
 import riot from 'riot';
 
 const __ = {
@@ -22,7 +23,7 @@ const html = `
         </a>
       </li>
       <li>
-        <a href="/dist/assets/BrandonButtarsResume.pdf" target="_blank" title="Download Resume">
+        <a href="${app.resume.pdf}" target="_blank" title="Download Resume">
           <icon is="file_download" circle></icon>
           <span>Download</span>
         </a>
