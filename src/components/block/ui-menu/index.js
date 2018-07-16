@@ -28,6 +28,12 @@ const html = `
           <span>Download</span>
         </a>
       </li>
+      <li>
+        <a href="https://github.com/brandonbuttars/resumeh" target="_blank" title="Repo Code">
+          <icon is="code" circle></icon>
+          <span>Repo Code</span>
+        </a>
+      </li>
   </nav>
 `;
 

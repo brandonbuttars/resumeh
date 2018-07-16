@@ -45,7 +45,9 @@ Run the following command:
 npm run build:dist
 ```
 
-This will run the builds for SCSS and JS but will minify them.  It only runs once though and won't watch for any changes.  You can view the files and check a running version with the following server scripts.
+This will run the builds for SCSS and JS but will minify them.  It only runs once though and won't watch for any changes.  You can view the files and check a running version with the following server scripts. This can be accessed by going to:
+
+[http://localhost:8888](http://localhost:8888)
 
 #### Dist Server
 
@@ -53,7 +55,9 @@ This will run the builds for SCSS and JS but will minify them.  It only runs onc
 npm run server
 ```
 
-This will run the server using the `build:dist` files normally without compressing them.
+This will run the server using the `build:dist` files normally without compressing them. This can be accessed by going to:
+
+[http://localhost:8888](http://localhost:8888)
 
 #### GZip Dist Server
 
