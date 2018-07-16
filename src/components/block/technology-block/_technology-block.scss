@@ -1,4 +1,4 @@
-ui-technology {
+technology-block {
   grid {
     span {
       margin: 0,5rem;
@@ -10,16 +10,19 @@ ui-technology {
         text-transform: uppercase;
         font-size: 1.2rem;
         font-weight: 800;
-        color: $white;
+        color: $white !important;
         text-decoration: none;
         opacity: 0.85;
         transition: 0.2s opacity ease-in-out;
-        text-shadow: 0.1rem 0.1rem 0 rgba(0,0,0,0.2);
+        text-shadow: 0.1rem 0.1rem 0 rgba($black,0.2);
+        border-bottom: 0 !important;
         &:hover {
           opacity: 1;
         }
         &[active] {
           background: $secondary-300 !important;
+          color: $primary-500 !important;
+          text-shadow: 0.1rem 0.1rem 0 rgba($white,0.2);
           opacity: 1;
         }
       }

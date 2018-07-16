@@ -16,6 +16,7 @@ portfolio-block {
       transition: 0.1s all linear;
       background-size: cover;
       opacity: 0.5;
+      border-bottom: 0 !important;
       &:hover {
         opacity: 1;
       }

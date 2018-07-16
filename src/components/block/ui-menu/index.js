@@ -38,7 +38,7 @@ riot.tag('ui-menu', html, function (opts) {
   tag.items = [
     { label: 'Profile', icon: 'face', section: 'profile' },
     { label: 'Experience', icon: 'business', section: 'experience' },
-    // { label: 'Technology', icon: 'important_devices', section: 'technology' },
+    { label: 'Technology', icon: 'important_devices', section: 'technology' },
     { label: 'Education', icon: 'school', section: 'education' },
     { label: 'Portfolio', icon: 'palette', section: 'portfolio' }
   ];

@@ -8,6 +8,7 @@ import './block/ui-menu';
 import './block/experience-block';
 import './block/education-block';
 import './block/portfolio-block';
+import './block/technology-block';
 // CONTAINERS
 import './container/ui-app';
 import './container/ui-profile';

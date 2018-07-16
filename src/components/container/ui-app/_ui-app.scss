@@ -22,6 +22,16 @@ ui-app {
     &[hidden] {
       opacity: 0;
     }
+    a {
+      text-decoration: none;
+      color: $secondary-400;
+      border-bottom: 0.1rem dotted $primary-300;
+      transition: 0.1s all linear;
+      &:hover {
+        color: $primary-400;
+        border-bottom: 0.1rem dotted $secondary-400;
+      }
+    }
   }
   .profile-wrapper img {
     display: block;
