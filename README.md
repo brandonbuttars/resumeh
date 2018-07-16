@@ -69,5 +69,6 @@ This will run the server using the `build:dist` files and compressing files wher
 
 ## TODO:
 
-*Add tests.*
+* *Add tests.*
+* *Debug more in mobile. (nav scrolling, bottom padding)*
 
